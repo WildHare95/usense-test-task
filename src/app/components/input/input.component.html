@@ -1,0 +1,12 @@
+<div class="form__group field">
+  <input
+    class="form__field"
+    name="input-field"
+    id="input-field"
+    type="text"
+    [placeholder]="placeholder"
+    [value]="controlValue"
+    (input)="setValueChanges($event)"
+  />
+  <label for="input-field" class="form__label">{{ placeholder }}</label>
+</div>

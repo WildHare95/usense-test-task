@@ -1,0 +1,57 @@
+@import "assets/scss/variables";
+
+.form {
+  &__group {
+    position: relative;
+    padding: 15px 0 0;
+    margin-top: 10px;
+    width: 100%;
+  }
+
+  &__field {
+    font-family: inherit;
+    width: 100%;
+    border: 0;
+    border-bottom: 2px solid $gray;
+    outline: 0;
+    font-size: 1.3rem;
+    color: $text;
+    padding: 7px 0;
+    background: transparent;
+    transition: border-color 0.2s;
+
+    &::placeholder {
+      color: transparent;
+    }
+
+    &:placeholder-shown ~ .form__label {
+      font-size: 16px;
+      cursor: text;
+      top: 26px;
+    }
+
+    &:focus {
+      ~ .form__label {
+        position: absolute;
+        top: 10px;
+        display: block;
+        transition: 0.2s;
+        font-size: 10px;
+        color: $primary;
+      }
+    }
+  }
+
+  &__label {
+    position: absolute;
+    top: 10px;
+    display: block;
+    transition: 0.2s;
+    font-size: 10px;
+    color: $gray;
+  }
+
+  &__field {
+    &:required,&:invalid { box-shadow:none; }
+  }
+}
